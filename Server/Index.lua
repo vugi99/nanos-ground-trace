@@ -100,8 +100,8 @@ end, RequestForChunkEach_ms)
 Events.Subscribe("GroundTraceForCache", function(ply, chunk_x, chunk_y, chunk)
     --print(chunk_x, chunk_y)
     for k, v in pairs(chunk) do
-        chunk[k].Location = {chunk[k].Location.X, chunk[k].Location.Y, chunk[k].Location.Z}
-        chunk[k].Normal = {chunk[k].Normal.X, chunk[k].Normal.Y, chunk[k].Normal.Z}
+        chunk[k].Location = {X = chunk[k].Location.X, Y = chunk[k].Location.Y, Z = chunk[k].Location.Z}
+        chunk[k].Normal = {X = chunk[k].Normal.X, Y = chunk[k].Normal.Y, Z = chunk[k].Normal.Z}
     end
     CurMap_Cache.CHUNKS["x" .. tostring(chunk_x) .. "y" .. tostring(chunk_y)] = chunk
 end)
